@@ -1,6 +1,6 @@
 {
   "name": "@doptools/plugin-version",
-  "version": "1.0.0",
+  "version": "0.0.0-dev.1",
   "author": "Dan Erdelt @myrddraall",
   "bugs": "https://github.com/doptools/plugin-version",
   "dependencies": {
