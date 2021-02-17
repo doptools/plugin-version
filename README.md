@@ -19,7 +19,7 @@ $ npm install -g @doptools/plugin-version
 $ oclif-example COMMAND
 running command...
 $ oclif-example (-v|--version|version)
-@doptools/plugin-version/0.0.0-dev.2 linux-x64 node-v14.15.5
+@doptools/plugin-version/0.0.0-dev.3 linux-x64 node-v14.15.5
 $ oclif-example --help [COMMAND]
 USAGE
   $ oclif-example COMMAND
@@ -41,7 +41,7 @@ USAGE
   $ oclif-example version:VersionCommand
 ```
 
-_See code: [src/commands/version/VersionCommand.ts](https://github.com/doptools/plugin-version/blob/v0.0.0-dev.2/src/commands/version/VersionCommand.ts)_
+_See code: [src/commands/version/VersionCommand.ts](https://github.com/doptools/plugin-version/blob/v0.0.0-dev.3/src/commands/version/VersionCommand.ts)_
 
 ## `oclif-example version:bump VERSIONPART`
 
@@ -58,7 +58,7 @@ OPTIONS
   -d, --dryRun
 ```
 
-_See code: [src/commands/version/bump.ts](https://github.com/doptools/plugin-version/blob/v0.0.0-dev.2/src/commands/version/bump.ts)_
+_See code: [src/commands/version/bump.ts](https://github.com/doptools/plugin-version/blob/v0.0.0-dev.3/src/commands/version/bump.ts)_
 
 ## `oclif-example version:get`
 
@@ -69,7 +69,7 @@ USAGE
   $ oclif-example version:get
 ```
 
-_See code: [src/commands/version/get.ts](https://github.com/doptools/plugin-version/blob/v0.0.0-dev.2/src/commands/version/get.ts)_
+_See code: [src/commands/version/get.ts](https://github.com/doptools/plugin-version/blob/v0.0.0-dev.3/src/commands/version/get.ts)_
 
 ## `oclif-example version:new [FILE]`
 
@@ -85,7 +85,7 @@ OPTIONS
   -n, --name=name  name to print
 ```
 
-_See code: [src/commands/version/new.ts](https://github.com/doptools/plugin-version/blob/v0.0.0-dev.2/src/commands/version/new.ts)_
+_See code: [src/commands/version/new.ts](https://github.com/doptools/plugin-version/blob/v0.0.0-dev.3/src/commands/version/new.ts)_
 
 ## `oclif-example version:set VERSION`
 
@@ -99,5 +99,5 @@ ARGUMENTS
   VERSION  The verion to set the project to
 ```
 
-_See code: [src/commands/version/set.ts](https://github.com/doptools/plugin-version/blob/v0.0.0-dev.2/src/commands/version/set.ts)_
+_See code: [src/commands/version/set.ts](https://github.com/doptools/plugin-version/blob/v0.0.0-dev.3/src/commands/version/set.ts)_
 <!-- commandsstop -->
