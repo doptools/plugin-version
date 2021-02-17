@@ -55,7 +55,7 @@
       "version:apply": "./lib/hooks/version/apply"
     }
   },
-  "repository": "myrddraall/myplug",
+  "repository": "doptools/plugin-version",
   "scripts": {
     "postpack": "rm -f oclif.manifest.json",
     "posttest": "eslint . --ext .ts --config .eslintrc",
