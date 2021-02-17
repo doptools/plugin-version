@@ -23,6 +23,8 @@ jobs:
           scope: "doptools"
 
       - name: Install
+        env:
+          NODE_AUTH_TOKEN: ${{ github.token }}
         run: yarn install
 
       - name: Run Help
