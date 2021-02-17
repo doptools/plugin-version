@@ -19,7 +19,7 @@ $ npm install -g @doptools/plugin-version
 $ oclif-example COMMAND
 running command...
 $ oclif-example (-v|--version|version)
-@doptools/plugin-version/0.0.0-alpha.0 linux-x64 node-v14.15.5
+@doptools/plugin-version/1.0.0 linux-x64 node-v14.15.5
 $ oclif-example --help [COMMAND]
 USAGE
   $ oclif-example COMMAND
@@ -28,23 +28,36 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
+* [`oclif-example version:bump PART`](#oclif-example-versionbump-part)
 * [`oclif-example version:get`](#oclif-example-versionget)
 * [`oclif-example version:new [FILE]`](#oclif-example-versionnew-file)
 * [`oclif-example version:set [VERSION]`](#oclif-example-versionset-version)
 
-## `oclif-example version:get`
+## `oclif-example version:bump PART`
 
-Get the version of the project
+describe the command here
+
+```
+USAGE
+  $ oclif-example version:bump PART
+
+ARGUMENTS
+  PART  (major|minor|patch|prerelease) which part of the semver to bump
+
+OPTIONS
+  --dryRun
+```
+
+_See code: [src/commands/version/bump.ts](https://github.com/myrddraall/myplug/blob/v1.0.0/src/commands/version/bump.ts)_
+
+## `oclif-example version:get`
 
 ```
 USAGE
   $ oclif-example version:get
-
-OPTIONS
-  -h, --help  show CLI help
 ```
 
-_See code: [src/commands/version/get.ts](https://github.com/myrddraall/myplug/blob/v0.0.0-alpha.0/src/commands/version/get.ts)_
+_See code: [src/commands/version/get.ts](https://github.com/myrddraall/myplug/blob/v1.0.0/src/commands/version/get.ts)_
 
 ## `oclif-example version:new [FILE]`
 
@@ -60,16 +73,16 @@ OPTIONS
   -n, --name=name  name to print
 ```
 
-_See code: [src/commands/version/new.ts](https://github.com/myrddraall/myplug/blob/v0.0.0-alpha.0/src/commands/version/new.ts)_
+_See code: [src/commands/version/new.ts](https://github.com/myrddraall/myplug/blob/v1.0.0/src/commands/version/new.ts)_
 
 ## `oclif-example version:set [VERSION]`
 
-describe the command here
+Sets the version of a project
 
 ```
 USAGE
   $ oclif-example version:set [VERSION]
 ```
 
-_See code: [src/commands/version/set.ts](https://github.com/myrddraall/myplug/blob/v0.0.0-alpha.0/src/commands/version/set.ts)_
+_See code: [src/commands/version/set.ts](https://github.com/myrddraall/myplug/blob/v1.0.0/src/commands/version/set.ts)_
 <!-- commandsstop -->
