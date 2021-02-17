@@ -1,11 +1,13 @@
 {
   "name": "@doptools/plugin-version",
-  "version": "0.0.0-alpha.0",
+  "version": "1.0.0",
   "author": "Dan Erdelt @myrddraall",
   "bugs": "https://github.com/doptools/plugin-version",
   "dependencies": {
+    "@doptools/tslib-cli-core": "^0.0.0-dev.0",
     "@oclif/command": "^1",
     "@oclif/config": "^1",
+    "semver": "^7.3.4",
     "shelljs": "^0.8.4",
     "tslib": "^1",
     "yarn": "^1.22.10"
@@ -17,6 +19,7 @@
     "@types/chai": "^4",
     "@types/mocha": "^5",
     "@types/node": "^10",
+    "@types/semver": "^7.3.4",
     "@types/shelljs": "^0.8.8",
     "chai": "^4",
     "eslint": "^5.13",
@@ -47,7 +50,10 @@
     "bin": "oclif-example",
     "devPlugins": [
       "@oclif/plugin-help"
-    ]
+    ],
+    "hooks": {
+      "version:apply": "./lib/hooks/version/apply"
+    }
   },
   "repository": "myrddraall/myplug",
   "scripts": {
