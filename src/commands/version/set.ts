@@ -28,7 +28,6 @@ export default class VersionSet extends VersionCommand {
   public version?: string;
 
   protected execute(tree: Tree, context: SchematicContext, options:any): Promise<Rule> {
-    console.log(options);
     return this.applyVersionToProject(this.version!, options);
   }
 

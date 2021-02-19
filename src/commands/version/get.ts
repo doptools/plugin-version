@@ -1,7 +1,7 @@
 import { SchematicContext, Rule } from '@angular-devkit/schematics';
 import { Tree } from '@angular-devkit/schematics/src/tree/interface';
-import { CliCommand, PackageJsonFile, Shell } from '@doptools/tslib-cli-core';
-import { Observable } from '@doptools/tslib-cli-core/node_modules/rxjs';
+import { CliCommand } from '@doptools/tslib-cli-core';
+
 import { parse } from 'semver';
 
 import { VersionCommand } from './VersionCommand';
@@ -10,11 +10,12 @@ import { VersionCommand } from './VersionCommand';
   description: 'Get the version of the project'
 })
 export default class GetVersion extends VersionCommand {
-  protected async execute(_: Tree, context: SchematicContext): Promise<void | Rule> {
-
-    const dir = await this.fs.list('../test-proj');
-    context.logger.info(dir.join('\n'))
-    const pkg = await new PackageJsonFile('package.json').loadFile();
+  protected readonly readonly:boolean = true;
+  protected async execute(): Promise<void | Rule> {
+    const pkg = await this.packageJson;
+    if(!pkg){
+      this.error("No package.json found.")
+    }
     const currentVersion = parse(pkg.version);
     this.log(currentVersion?.version);
   }

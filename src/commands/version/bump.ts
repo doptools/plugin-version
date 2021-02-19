@@ -22,7 +22,10 @@ export default class VersionBump extends VersionCommand {
   public dryRun?: boolean;
 
   protected async execute(tree: Tree, context: SchematicContext, options: any): Promise<Rule> {
-    const pkg = await new PackageJsonFile(tree, 'package.json').loadFile();
+    const pkg = await this.packageJson;
+    if(!pkg){
+      this.error("No package.json found.")
+    }
     const currentVersion = parse(pkg.version);
     const nextVersion = parse(pkg.version)?.inc(this.versionPart!);
     this.log(`Bumping ${this.versionPart} from ${currentVersion!.version} to ${nextVersion!.version}.`);
