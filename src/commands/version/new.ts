@@ -1,26 +1,12 @@
-import { flags } from '@oclif/command'
+import { Rule, SchematicContext } from '@angular-devkit/schematics'
+import { Tree } from '@angular-devkit/schematics/src/tree/interface'
+import { IRuleOptions } from '@doptools/tslib-cli-core'
+import { Observable } from '@doptools/tslib-cli-core/node_modules/rxjs'
 import { VersionCommand } from './VersionCommand'
 
 export default class VersionNew extends VersionCommand {
-  static description = 'describe the command here'
-
-  static flags = {
-    help: flags.help({ char: 'h' }),
-    // flag with a value (-n, --name=VALUE)
-    name: flags.string({ char: 'n', description: 'name to print' }),
-    // flag with no value (-f, --force)
-    force: flags.boolean({ char: 'f' }),
+  protected execute(tree: Tree, context: SchematicContext, options: Partial<IRuleOptions>): void | Tree | Observable<Tree> | Rule | Promise<void | Rule> {
+    throw new Error('Method not implemented.')
   }
-
-  static args = [{ name: 'file' }]
-
-  async run() {
-    const { args, flags } = this.parse(VersionNew)
-
-    const name = flags.name ?? 'world'
-    this.log(`hello ${name} from /home/vscode/devcontainer-generators/projects/plugin-version/src/commands/version/new.ts`)
-    if (args.file && flags.force) {
-      this.log(`you input --force and --file: ${args.file}`)
-    }
-  }
+  
 }

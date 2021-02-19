@@ -1,6 +1,9 @@
-import { CliArgument, CliCommand, PackageJsonFile,FlagBoolean } from '@doptools/tslib-cli-core';
+import { SchematicContext, Rule } from '@angular-devkit/schematics';
+import { Tree } from '@angular-devkit/schematics/src/tree/interface';
+import { Argument, CliCommand, PackageJsonFile, BooleanFlag } from '@doptools/tslib-cli-core';
+import { Observable } from '@doptools/tslib-cli-core/node_modules/rxjs';
 
-import semver, { ReleaseType } from 'semver';
+import { parse, ReleaseType } from 'semver';
 import { VersionCommand } from './VersionCommand';
 
 
@@ -8,23 +11,22 @@ import { VersionCommand } from './VersionCommand';
   description: 'Bump the version of a project'
 })
 export default class VersionBump extends VersionCommand {
-
-  @CliArgument({
+  @Argument({
     description: 'Which part of the semver to bump',
     options: ['major', 'premajor', 'minor', 'preminor', 'patch', 'prepatch', 'prerelease'],
     required: true
   })
   public versionPart?: ReleaseType;
 
-  @FlagBoolean()
+  @BooleanFlag()
   public dryRun?: boolean;
 
-  async run() {
-    const pkg = await new PackageJsonFile('package.json').loadFile();
-    const currentVersion = semver.parse(pkg.version);
-    const nextVersion = semver.parse(pkg.version)?.inc(this.versionPart!);
-
-    this.log(`Bumping ${this.versionPart} from ${currentVersion!.version} to ${nextVersion!.version}. dryRun? ${this.dryRun}`)
-
+  protected async execute(tree: Tree, context: SchematicContext, options: any): Promise<Rule> {
+    const pkg = await new PackageJsonFile(tree, 'package.json').loadFile();
+    const currentVersion = parse(pkg.version);
+    const nextVersion = parse(pkg.version)?.inc(this.versionPart!);
+    this.log(`Bumping ${this.versionPart} from ${currentVersion!.version} to ${nextVersion!.version}.`);
+    return this.applyVersionToProject(nextVersion!.version, options);
   }
+
 }
