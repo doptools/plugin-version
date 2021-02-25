@@ -1,7 +1,7 @@
 {
   "name": "@doptools/plugin-version",
   "version": "0.0.0-dev.5",
-  "author": "Dan Erdelt @myrddraall",
+  "author": "Dan Erdelt",
   "bugs": "https://github.com/doptools/plugin-version",
   "dependencies": {
     "@angular-devkit/schematics": "^11.2.1",
